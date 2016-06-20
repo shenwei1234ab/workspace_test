@@ -1,2 +1,7 @@
 .metadata/
 metadata/
+Debug/*
+*.o
+*.out
+core.*
+
