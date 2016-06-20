@@ -4,4 +4,6 @@ Debug/*
 *.o
 *.out
 core.*
-
+debug/*
+build/*
+Build/*

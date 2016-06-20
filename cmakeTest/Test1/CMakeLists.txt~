@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 2.8)
+PROJECT (HELLO)
+SET(SRC_LIST main.cpp)
+MESSAGE(STATUS "This is BINARY dir " ${HELLO_BINARY_DIR})
+MESSAGE(STATUS "This is SOURCE dir "${HELLO_SOURCE_DIR})
+ADD_DEFINITIONS(-DDEBUG)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -gdwarf-2 -pg")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread -Wall -Werror
+-fPIC ")
+
+ADD_EXECUTABLE(hello ${SRC_LIST})

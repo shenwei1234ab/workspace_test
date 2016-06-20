@@ -1,0 +1,14 @@
+linux:
+http://blog.csdn.net/hj19870806/article/details/8185604
+http://ahnhhh.blog.163.com/blog/static/15663582012823113310385/
+http://blog.csdn.net/simpleniulq/article/details/14441605
+
+windows:
+http://blog.csdn.net/xbgprogrammer/article/details/9086171
+
+
+
+服务器端：监听rpc端口 111（Linux）135（windows)
+逻辑写在test_svr_func.c 和test_clnt_func.c中
+
+		

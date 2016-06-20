@@ -1,0 +1,7 @@
+c:fopen fwrite printf 缓冲区(8192b 字节) ->linux:write open
+linux:write open 	  直接磁盘io
+
+
+进程： pcb   存文件描述符数组（0,1,2,3,4....）
+
+

@@ -1,0 +1,8 @@
+default:all
+
+.DEFAULT:
+	@cd ./modules && $(MAKE) $@
+	@cd ./src && $(MAKE) $@
+	@cp spider ../
+.PHONY:
+	default

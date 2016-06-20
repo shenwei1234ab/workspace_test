@@ -1,0 +1,2 @@
+LT：水平触发 缺省工作，block ,no-block,没做任何操作下次调用epoll_wait还会通知
+ET: 边缘触发 no-block socket,描述符从未就绪变为就绪时，内核才通过epoll通知,,没做任何操作下次调用epoll_wait不会通知

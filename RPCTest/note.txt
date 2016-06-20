@@ -1,0 +1,44 @@
+linux:
+http://blog.csdn.net/hj19870806/article/details/8185604
+http://ahnhhh.blog.163.com/blog/static/15663582012823113310385/
+http://blog.csdn.net/simpleniulq/article/details/14441605
+windows:
+http://blog.csdn.net/xbgprogrammer/article/details/9086171
+服务器端：监听rpc端口 111（Linux）135（windows)
+逻辑写在test_svr_func.c 和test_clnt_func.c中
+
+
+(1).运行这个命令：
+rpcgen test.x
+
+将生成三个源文件：
+test_clnt.c  test.h  test_svc.c
+
+ 
+
+(2).运行下列命令生成一个客户端源文件test_clnt_func.c：
+rpcgen -Sc -o test_clnt_func.c test.x
+
+ 
+
+将生成文件：test_clnt_func.c
+
+
+(3).运行这个命令生成服务端源文件test_srv_func.c：
+rpcgen -Ss -o test_srv_func.c test.x
+
+ 
+
+将生成文件：test_srv_func.c
+
+ 
+
+(4)至此，我们就可以编译生成程序来运行了。
+用下面的命令编译生成服务端程序test_server：
+gcc -Wall -o test_server test_clnt.c test_srv_func.c test_svc.c
+
+用下面的命令编译生成客户端程序test_client：
+gcc -Wall -o test_client test_clnt_func.c test_clnt.c
+
+
+		

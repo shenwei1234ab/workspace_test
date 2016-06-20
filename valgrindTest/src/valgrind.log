@@ -1,0 +1,30 @@
+==38416== Memcheck, a memory error detector
+==38416== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==38416== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==38416== Command: ./valgrindTest
+==38416== Parent PID: 38415
+==38416== 
+==38416== Invalid write of size 4
+==38416==    at 0x4007F8: f() (valgrindTest.cpp:20)
+==38416==    by 0x400808: main (valgrindTest.cpp:25)
+==38416==  Address 0x4c2a0b8 is not stack'd, malloc'd or (recently) free'd
+==38416== 
+==38416== 
+==38416== HEAP SUMMARY:
+==38416==     in use at exit: 4 bytes in 1 blocks
+==38416==   total heap usage: 2 allocs, 1 frees, 8 bytes allocated
+==38416== 
+==38416== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==38416==    at 0x4A07192: operator new[](unsigned long) (vg_replace_malloc.c:363)
+==38416==    by 0x4007EB: f() (valgrindTest.cpp:19)
+==38416==    by 0x400808: main (valgrindTest.cpp:25)
+==38416== 
+==38416== LEAK SUMMARY:
+==38416==    definitely lost: 4 bytes in 1 blocks
+==38416==    indirectly lost: 0 bytes in 0 blocks
+==38416==      possibly lost: 0 bytes in 0 blocks
+==38416==    still reachable: 0 bytes in 0 blocks
+==38416==         suppressed: 0 bytes in 0 blocks
+==38416== 
+==38416== For counts of detected and suppressed errors, rerun with: -v
+==38416== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 6 from 6)

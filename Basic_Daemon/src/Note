@@ -1,0 +1,14 @@
+终端启动过程：
+init->fork->exec->getty->用户输入->login->输入密码->exec->shell
+终端登录后加载一个shell
+
+
+
+查看会话:ps ajx
+shell退出会发送SIGHUP
+创建新会话：setsid
+
+
+
+
+

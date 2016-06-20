@@ -1,0 +1,216 @@
+==4796== Memcheck, a memory error detector
+==4796== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==4796== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==4796== Command: ./valgrindTest
+==4796== Parent PID: 4795
+==4796== 
+--4796-- 
+--4796-- Valgrind options:
+--4796--    --track-fds=yes
+--4796--    -v
+--4796--    --tool=memcheck
+--4796--    --leak-check=full
+--4796--    --show-reachable=yes
+--4796--    --track-origins=yes
+--4796--    --log-file=valgrind.log
+--4796-- Contents of /proc/version:
+--4796--   Linux version 2.6.32-504.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-11) (GCC) ) #1 SMP Wed Oct 15 04:27:16 UTC 2014
+--4796-- Arch and hwcaps: AMD64, amd64-sse3-cx16-avx
+--4796-- Page sizes: currently 4096, max supported 4096
+--4796-- Valgrind library directory: /usr/lib64/valgrind
+--4796-- Reading syms from /home/leave/workspace_test/valgrindTest2/src/valgrindTest
+--4796-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--4796--    object doesn't have a dynamic symbol table
+--4796-- Reading syms from /lib64/ld-2.12.so
+--4796--   Considering /usr/lib/debug/lib64/ld-2.12.so.debug ..
+--4796--   .. CRC mismatch (computed c58d50dc wanted b3bc1de7)
+--4796-- Scheduler: using generic scheduler lock implementation.
+--4796-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==4796== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-4796-by-leave-on-lk
+==4796== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-4796-by-leave-on-lk
+==4796== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-4796-by-leave-on-lk
+==4796== 
+==4796== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==4796== don't want to do, unless you know exactly what you're doing,
+==4796== or are doing some strange experiment):
+==4796==   /usr/lib64/valgrind/../../bin/vgdb --pid=4796 ...command...
+==4796== 
+==4796== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==4796==   /path/to/gdb ./valgrindTest
+==4796== and then give GDB the following command
+==4796==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=4796
+==4796== --pid is optional if only one valgrind process is running
+==4796== 
+--4796-- REDIR: 0x338c417610 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--4796-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--4796-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--4796-- REDIR: 0x338c417480 (index) redirected to 0x4a07c30 (index)
+--4796-- REDIR: 0x338c417500 (strcmp) redirected to 0x4a08570 (strcmp)
+--4796-- Reading syms from /usr/lib64/libstdc++.so.6.0.19
+--4796-- Reading syms from /lib64/libm-2.12.so
+--4796--   Considering /usr/lib/debug/lib64/libm-2.12.so.debug ..
+--4796--   .. CRC mismatch (computed 958458c0 wanted 5249a793)
+--4796-- Reading syms from /lib64/libgcc_s-4.4.7-20120601.so.1
+--4796--   Considering /usr/lib/debug/.build-id/24/6c3bab0ab093afd59d34c8cbf29e786de4be97.debug ..
+--4796--   .. build-id is valid
+--4796-- Reading syms from /lib64/libc-2.12.so
+--4796--   Considering /usr/lib/debug/lib64/libc-2.12.so.debug ..
+--4796--   .. CRC mismatch (computed 4860c47c wanted 7eff2c0d)
+--4796-- REDIR: 0x338cc84cd0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--4796-- REDIR: 0x338cc86f90 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--4796-- REDIR: 0x338cc82c40 (__GI_strrchr) redirected to 0x4a07ab0 (__GI_strrchr)
+--4796-- REDIR: 0x338cc81160 (__GI_strlen) redirected to 0x4a07fb0 (__GI_strlen)
+--4796-- REDIR: 0x338cc7f6e0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--4796-- REDIR: 0x338cd28420 (__strcmp_sse42) redirected to 0x4a084d0 (strcmp)
+--4796-- REDIR: 0x338cc89670 (memcpy) redirected to 0x4a08b60 (memcpy)
+--4796-- REDIR: 0x338cc833d0 (bcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--4796-- REDIR: 0x338cd3e790 (__memcmp_sse4_1) redirected to 0x4a09670 (bcmp)
+==4796== Conditional jump or move depends on uninitialised value(s)
+==4796==    at 0x3C7CE8BC7F: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:870)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+==4796== Use of uninitialised value of size 8
+==4796==    at 0x3C7CE8BB73: int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool) (locale_facets.tcc:798)
+==4796==    by 0x3C7CE8BCA6: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:871)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+==4796== Conditional jump or move depends on uninitialised value(s)
+==4796==    at 0x3C7CE8BB7F: int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool) (locale_facets.tcc:796)
+==4796==    by 0x3C7CE8BCA6: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:871)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+==4796== Conditional jump or move depends on uninitialised value(s)
+==4796==    at 0x3C7CE8BCD4: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:891)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+--4796-- REDIR: 0x338cc7a640 (malloc) redirected to 0x4a069ac (malloc)
+==4796== Invalid write of size 2
+==4796==    at 0x40099C: mem_overrun1() (valgrindTest.cpp:25)
+==4796==    by 0x400A53: main (valgrindTest.cpp:67)
+==4796==  Address 0x4c2a310 is 0 bytes inside a block of size 1 alloc'd
+==4796==    at 0x4A06A2E: malloc (vg_replace_malloc.c:270)
+==4796==    by 0x400993: mem_overrun1() (valgrindTest.cpp:24)
+==4796==    by 0x400A53: main (valgrindTest.cpp:67)
+==4796== 
+--4796-- REDIR: 0x338cc7b520 (free) redirected to 0x4a063a9 (free)
+==4796== 
+==4796== FILE DESCRIPTORS: 5 open at exit.
+==4796== Open file descriptor 4: test.txt
+==4796==    at 0x338CCDB3B0: __open_nocancel (in /lib64/libc-2.12.so)
+==4796==    by 0x338CC72AEE: _IO_file_fopen@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)
+==4796==    by 0x338CC66F25: __fopen_internal (in /lib64/libc-2.12.so)
+==4796==    by 0x40095E: mem_leak2() (valgrindTest.cpp:12)
+==4796==    by 0x400A4E: main (valgrindTest.cpp:66)
+==4796== 
+==4796== Open file descriptor 3: /home/leave/workspace_test/valgrindTest2/src/valgrind.log
+==4796==    <inherited from parent>
+==4796== 
+==4796== Open file descriptor 2: /dev/pts/0
+==4796==    <inherited from parent>
+==4796== 
+==4796== Open file descriptor 1: /dev/pts/0
+==4796==    <inherited from parent>
+==4796== 
+==4796== Open file descriptor 0: /dev/pts/0
+==4796==    <inherited from parent>
+==4796== 
+==4796== 
+==4796== HEAP SUMMARY:
+==4796==     in use at exit: 569 bytes in 2 blocks
+==4796==   total heap usage: 3 allocs, 1 frees, 570 bytes allocated
+==4796== 
+==4796== Searching for pointers to 2 not-freed blocks
+==4796== Checked 180,288 bytes
+==4796== 
+==4796== 1 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==4796==    at 0x4A06A2E: malloc (vg_replace_malloc.c:270)
+==4796==    by 0x400941: mem_leak1() (valgrindTest.cpp:7)
+==4796==    by 0x400A49: main (valgrindTest.cpp:65)
+==4796== 
+==4796== 568 bytes in 1 blocks are still reachable in loss record 2 of 2
+==4796==    at 0x4A06A2E: malloc (vg_replace_malloc.c:270)
+==4796==    by 0x338CC66ECA: __fopen_internal (in /lib64/libc-2.12.so)
+==4796==    by 0x40095E: mem_leak2() (valgrindTest.cpp:12)
+==4796==    by 0x400A4E: main (valgrindTest.cpp:66)
+==4796== 
+==4796== LEAK SUMMARY:
+==4796==    definitely lost: 1 bytes in 1 blocks
+==4796==    indirectly lost: 0 bytes in 0 blocks
+==4796==      possibly lost: 0 bytes in 0 blocks
+==4796==    still reachable: 568 bytes in 1 blocks
+==4796==         suppressed: 0 bytes in 0 blocks
+==4796== 
+==4796== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 6 from 6)
+==4796== 
+==4796== 1 errors in context 1 of 6:
+==4796== Invalid write of size 2
+==4796==    at 0x40099C: mem_overrun1() (valgrindTest.cpp:25)
+==4796==    by 0x400A53: main (valgrindTest.cpp:67)
+==4796==  Address 0x4c2a310 is 0 bytes inside a block of size 1 alloc'd
+==4796==    at 0x4A06A2E: malloc (vg_replace_malloc.c:270)
+==4796==    by 0x400993: mem_overrun1() (valgrindTest.cpp:24)
+==4796==    by 0x400A53: main (valgrindTest.cpp:67)
+==4796== 
+==4796== 
+==4796== 1 errors in context 2 of 6:
+==4796== Conditional jump or move depends on uninitialised value(s)
+==4796==    at 0x3C7CE8BCD4: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:891)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+==4796== 
+==4796== 1 errors in context 3 of 6:
+==4796== Conditional jump or move depends on uninitialised value(s)
+==4796==    at 0x3C7CE8BB7F: int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool) (locale_facets.tcc:796)
+==4796==    by 0x3C7CE8BCA6: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:871)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+==4796== 
+==4796== 1 errors in context 4 of 6:
+==4796== Use of uninitialised value of size 8
+==4796==    at 0x3C7CE8BB73: int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool) (locale_facets.tcc:798)
+==4796==    by 0x3C7CE8BCA6: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:871)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+==4796== 
+==4796== 1 errors in context 5 of 6:
+==4796== Conditional jump or move depends on uninitialised value(s)
+==4796==    at 0x3C7CE8BC7F: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:870)
+==4796==    by 0x3C7CE8C21C: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.h:2475)
+==4796==    by 0x3C7CE97D8D: std::ostream& std::ostream::_M_insert<long>(long) (locale_facets.h:2336)
+==4796==    by 0x400A37: main (valgrindTest.cpp:64)
+==4796==  Uninitialised value was created by a stack allocation
+==4796==    at 0x400A21: main (valgrindTest.cpp:61)
+==4796== 
+--4796-- 
+--4796-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--4796-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==4796== 
+==4796== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 6 from 6)

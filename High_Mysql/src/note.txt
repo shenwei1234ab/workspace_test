@@ -1,0 +1,11 @@
+locate mysql.h
+./usr/include/mysql/mysql.h
+
+
+locate mysqlclient
+
+
+
+
+
+gcc Helloworld.c -o Helloworld -I/ -L/usr/lib64/mysql -lmysqlclient
