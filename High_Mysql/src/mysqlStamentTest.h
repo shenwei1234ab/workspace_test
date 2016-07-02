@@ -17,7 +17,7 @@ using namespace std;
                                                  col2 VARCHAR(40),\
                                                  col3 SMALLINT,\
                                                  col4 TIMESTAMP)"
-#define INSERT_SAMPLE "INSERT INTO test_table(col1,col5,col3) VALUES(?,?,?)"
+#define INSERT_SAMPLE "INSERT INTO test_table(col1,col2,col3) VALUES(?,?,?)"
 //statementTest
 int statementTest()
 {
@@ -111,10 +111,24 @@ int statementTest()
 	bind[1].length = &str_length;
 
 	/* SMALLINT PARAM */
-	bind[2].buffer_type = MYSQL_TYPE_SHORT;
+	/*bind[2].buffer_type = MYSQL_TYPE_SHORT;
 	bind[2].buffer = (char *) &small_data;
 	bind[2].is_null = &is_null;
-	bind[2].length = 0;
+	bind[2].length = 0;*/
+	//test
+	char str_data2[STRING_SIZE];
+	strncpy(str_data2, "20", STRING_SIZE); /* string  */
+	size_t str_length2 = strlen(str_data2);
+	bind[2].buffer_type = MYSQL_TYPE_STRING;
+	bind[2].buffer = (char *) &str_data2;
+	bind[2].buffer_length = STRING_SIZE;
+	bind[2].is_null = 0;
+	bind[2].length = &str_length2;
+	//small_data = 1000;
+
+
+
+
 
 	/* Bind the buffers */
 	if (mysql_stmt_bind_param(stmt, bind))
@@ -125,7 +139,7 @@ int statementTest()
 	}
 
 	/* Specify the data values for the first row */
-	int_data = 10; /* integer */
+	int_data = 20; /* integer */
 	strncpy(str_data, "MySQL", STRING_SIZE); /* string  */
 	str_length = strlen(str_data);
 
@@ -152,13 +166,13 @@ int statementTest()
 	}
 
 	/* Specify data values for second row, then re-execute the statement */
-	int_data = 1000;
+	/*int_data = 1000;
 	strncpy(str_data, "The most popular Open Source database", STRING_SIZE);
 	str_length = strlen(str_data);
-	small_data = 1000; /* smallint */
-	is_null = 0; /* reset */
+	small_data = 1000;  smallint
+	is_null = 0;  reset
 
-	/* Execute the INSERT statement - 2*/
+	 Execute the INSERT statement - 2
 	if (mysql_stmt_execute(stmt))
 	{
 		fprintf(stderr, " mysql_stmt_execute, 2 failed\n");
@@ -166,23 +180,23 @@ int statementTest()
 		exit(0);
 	}
 
-	/* Get the total rows affected */
+	 Get the total rows affected
 	affected_rows = mysql_stmt_affected_rows(stmt);
 	fprintf(stdout, " total affected rows(insert 2): %lu\n",
 			(unsigned long) affected_rows);
 
-	if (affected_rows != 1) /* validate affected rows */
+	if (affected_rows != 1)  validate affected rows
 	{
 		fprintf(stderr, " invalid affected rows by MySQL\n");
 		exit(0);
 	}
 
-	/* Close the statement */
+	 Close the statement
 	if (mysql_stmt_close(stmt))
 	{
 		fprintf(stderr, " failed while closing the statement\n");
 		fprintf(stderr, " %s\n", mysql_stmt_error(stmt));
 		exit(0);
-	}
+	}*/
 }
 

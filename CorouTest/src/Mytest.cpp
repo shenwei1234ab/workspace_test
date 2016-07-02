@@ -30,6 +30,7 @@ void func2(void *arg)
 
 void Handler()
 {
+	puts("Handle");
 	while( id == 1 || id == 2)
 	{
 		if(id == 1)

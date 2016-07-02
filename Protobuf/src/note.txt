@@ -1,1 +1,3 @@
-http://gashero.yeax.com/?p=108
+https://developers.google.com/protocol-buffers/docs/cpptutorial#defining-your-protocol-format
+
+protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto

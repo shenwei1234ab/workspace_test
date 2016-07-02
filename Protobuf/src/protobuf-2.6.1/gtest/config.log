@@ -500,7 +500,7 @@ configure: failed program was:
 configure:15635: result: no
 configure:15507: checking whether pthreads work without any flags
 configure:15605: gcc -o conftest     conftest.c   >&5
-/tmp/ccn6SIgr.o: In function `main':
+/tmp/cctVMbw4.o: In function `main':
 conftest.c:(.text+0x18): undefined reference to `pthread_join'
 conftest.c:(.text+0x7e): undefined reference to `__pthread_register_cancel'
 conftest.c:(.text+0x97): undefined reference to `pthread_create'
@@ -690,6 +690,7 @@ on lk
 config.status:1056: creating Makefile
 config.status:1056: creating scripts/gtest-config
 config.status:1056: creating build-aux/config.h
+config.status:1278: build-aux/config.h is unchanged
 config.status:1330: executing depfiles commands
 config.status:1330: executing libtool commands
 

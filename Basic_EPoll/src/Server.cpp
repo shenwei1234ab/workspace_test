@@ -13,8 +13,10 @@
 #define SERV_PORT 8001
 #define OPEN_MAX 1024
 
+//myadd
 int main(int argc, char *argv[])
 {
+	//test
 	int i, j, maxi, listenfd, connfd, sockfd;
 	int nready, efd, res;
 	ssize_t n;

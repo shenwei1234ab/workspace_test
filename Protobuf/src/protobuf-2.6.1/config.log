@@ -686,7 +686,7 @@ configure:16690: $? = 0
 configure:16696: result: ok (1.2.0.4 or later)
 configure:16700: checking for library containing zlibVersion
 configure:16741: g++ -o conftest  -g -DNDEBUG   conftest.cpp  >&5
-/tmp/cc3cPBnb.o: In function `main':
+/tmp/ccMU0AdL.o: In function `main':
 conftest.cpp:(.text+0x5): undefined reference to `zlibVersion'
 collect2: error: ld returned 1 exit status
 configure:16748: $? = 1
@@ -805,7 +805,7 @@ configure: failed program was:
 configure:17152: result: no
 configure:17024: checking whether pthreads work without any flags
 configure:17122: gcc -o conftest     conftest.c  -lz  >&5
-/tmp/ccmVTR1i.o: In function `main':
+/tmp/cci91SzW.o: In function `main':
 conftest.c:(.text+0x18): undefined reference to `pthread_join'
 conftest.c:(.text+0x7e): undefined reference to `__pthread_register_cancel'
 conftest.c:(.text+0x97): undefined reference to `pthread_create'
@@ -1049,7 +1049,7 @@ configure:17421: $? = 0
 configure:17442: result: yes
 configure:17592: checking whether what we have so far is sufficient with -nostdlib
 configure:17620: gcc -o conftest -nostdlib -shared -fPIC -Wl,-z,defs  -pthread   conftest.c  -lz  -lc >&5
-/tmp/ccQuUFeB.o: In function `main':
+/tmp/ccKRXm1d.o: In function `main':
 conftest.c:(.text+0x18): undefined reference to `pthread_join'
 conftest.c:(.text+0x7e): undefined reference to `__pthread_register_cancel'
 conftest.c:(.text+0x97): undefined reference to `pthread_create'
@@ -1330,6 +1330,7 @@ config.status:1095: creating src/Makefile
 config.status:1095: creating protobuf.pc
 config.status:1095: creating protobuf-lite.pc
 config.status:1095: creating config.h
+config.status:1317: config.h is unchanged
 config.status:1369: executing depfiles commands
 config.status:1369: executing libtool commands
 configure:20800: === configuring in gtest (/home/leave/workspace_test/Protobuf/src/protobuf-2.6.1/gtest)
