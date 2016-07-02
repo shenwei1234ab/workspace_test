@@ -1,0 +1,17 @@
+改错题：http://blog.sina.com.cn/s/blog_7e362ebc01018iwa.html
+static:http://zhidao.baidu.com/link?url=RrOSJOUx06x9yu7ZeiYCElLfDswBMcdQWeexkrWD_edj4L2UeGF2n6QkVtdncetmuu8mY58HYsaIf0S-n35hf0tULJ_zGKNyd09xRj9KqPm
+
+Linux:查看cpu http://blog.csdn.net/pbymw8iwm/article/details/41248991
+Linux:动态查看cpu top  多个cpu:top 后1
+   		查看内存 free
+   		
+   		
+   		静态查看cpu(内存) ps aux
+   		
+   		
+   		
+1.获取进程id
+ ps x|grep gamesvr_4.1.4.1|grep -v grep|sed -n '1p'|awk '{print $1}'
+2.查看cpu使用
+
+ 

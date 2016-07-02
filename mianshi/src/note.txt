@@ -1,0 +1,34 @@
+改错题：http://blog.sina.com.cn/s/blog_7e362ebc01018iwa.html
+static:http://zhidao.baidu.com/link?url=RrOSJOUx06x9yu7ZeiYCElLfDswBMcdQWeexkrWD_edj4L2UeGF2n6QkVtdncetmuu8mY58HYsaIf0S-n35hf0tULJ_zGKNyd09xRj9KqPm
+
+Linux:查看cpu http://blog.csdn.net/pbymw8iwm/article/details/41248991
+Linux:动态查看cpu top  多个cpu:top 后1
+   		查看内存 free
+   		
+   		
+   		静态查看cpu(内存) ps aux
+   		
+   		
+   		
+ 有道面试题大致是这样的
+
+有个高速缓冲日志类，问：下面程序有什么问题
+void test()
+{
+	static Log f("c:\\a.txt");
+	f.log("hello ");
+}  
+
+void test2()
+{
+	static Log f("c:\\a.txt");
+	f.log("world ");
+}  
+
+
+void main()
+{
+	test();
+	test2();
+}
+		
