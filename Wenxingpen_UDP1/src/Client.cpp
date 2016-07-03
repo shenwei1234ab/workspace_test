@@ -5,6 +5,7 @@
 #include "wrap.h"
 #include <sys/types.h>          /* See NOTES */
 #include <sys/socket.h>
+#include <arpa/inet.h>
 #define MAXLINE 80
 #define SERV_PORT 8000
 

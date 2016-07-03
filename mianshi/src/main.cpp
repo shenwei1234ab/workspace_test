@@ -18,17 +18,23 @@
 #include "memorytest.h"
 #include "sizeoftest.h"
 #include "virtualtableTest.h"
+#include "MyFun.h"
+#include "StrTest.h"
+#include "MyString.h"
 using namespace std;
 
 extern int g_id;
 extern void stest();
+
+int Sum( int n )
+{
+	return ( (long)1 + n) * n / 2;
+}
 int main()
 {
-	stest();
-	std::cout<<g_id<<std::endl;
-	std::cout<<"main"<<std::endl;
-	statictest2();
-	statictest2();
+	CString str1("shenwei");
+	CString str2("shenbin");
+	CString s3 = str1+str2;
 	return 0;
 }
 

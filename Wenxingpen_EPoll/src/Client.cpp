@@ -17,7 +17,7 @@ int sockfd, n;
 sockfd = Socket(AF_INET, SOCK_STREAM, 0);
 bzero(&servaddr, sizeof(servaddr));
 servaddr.sin_family = AF_INET;
-inet_pton(AF_INET, "127.0.0.1", &servaddr.sin_addr);
+inet_pton(AF_INET, "192.168.1.3", &servaddr.sin_addr);
 printf(" sin_addr is  %u\n",servaddr.sin_addr.s_addr);
 in_addr inAddr;
 inAddr.s_addr = servaddr.sin_addr.s_addr;
