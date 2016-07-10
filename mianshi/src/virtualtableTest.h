@@ -7,31 +7,53 @@
 #include<iostream>
 using namespace std;
 
-class Base
+class AA
 {
-
-public:
-
-virtual void f() { cout << "Base::f" << endl; }
-
-virtual void g() { cout << "Base::g" << endl; }
-
-virtual void h() { cout << "Base::h" << endl; }
-
+	//int num;
+	virtual void g()
+	{
+		cout << "A::g" << endl;
+	}
+private:
+	virtual void f()
+	{
+		cout << "A::f" << endl;
+	}
+	virtual void j()
+	{
+		cout << "A::j" << endl;
+	}
 };
 
 
-void vttest()
+class BB : public AA
 {
-	std::cout<<sizeof(Base)<<std::endl;
-	typedef void(*Fun)(void);
+	void g()
+	{
+		cout << "B::g" << endl;
+	}
+	virtual void h()
+	{
+		cout << "B::h" << endl;
+	}
+};
+typedef void(*Fun)(void);
 
-	Base b;
 
-	Fun pFun = NULL;
+void vtableTest()
+{
+	cout << sizeof(AA) << endl;
+	cout << sizeof(BB) << endl;
+	BB b;
+	Fun pFun;
 
-	//cout << "虚函数表地址：" << (int*)(&b) << endl;
-
-	//cout << "虚函数表 — 第一个函数地址：" << (int*)*(int*)(&b) << endl;
+	for (int i = 0; i < 3; i++)
+	{
+		//pFun是指向虚函数表的指针
+		pFun = (Fun)*((int*)* (int*)(&b) + i);
+		pFun();
+	}
+	//Fun pFun1 = (Fun)*((int *)*((int*)(&b) + 1));
+	//pFun1();
+	cin.get();
 }
-

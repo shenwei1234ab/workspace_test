@@ -21,6 +21,11 @@
 #include "MyFun.h"
 #include "StrTest.h"
 #include "MyString.h"
+#include "Fab.h"
+#include "MyList.h"
+#include "MyTree.h"
+#include "MySort.h"
+#include "MyFind.h"
 using namespace std;
 
 extern int g_id;
@@ -32,9 +37,8 @@ int Sum( int n )
 }
 int main()
 {
-	CString str1("shenwei");
-	CString str2("shenbin");
-	CString s3 = str1+str2;
+
+	vtableTest();
 	return 0;
 }
 
