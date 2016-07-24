@@ -34,6 +34,19 @@ int f(int a)
 }
 
 
+class MyLog
+{
+public :
+	MyLog()
+	{
+		std::cout << "myLog" << std::endl;
+	}
+	~MyLog()
+	{
+		std::cout << "myLog" << std::endl;
+	}
+};
+
 
 
 
